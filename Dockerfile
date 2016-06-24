@@ -7,6 +7,7 @@
 FROM ubuntu:xenial
 MAINTAINER Jeremy Jongsma "jeremy@foodjunky.com"
 
+ENV NODE_ENV production
 RUN apt-get --yes update && \
 	apt-get --yes install curl git && \
 	curl -sL https://deb.nodesource.com/setup_4.x | bash - && \
@@ -17,4 +18,4 @@ RUN apt-get --yes update && \
 
 WORKDIR /app
 
-CMD "npm start 2>&1 > /var/log/nodejs/nodejs.log"
+CMD npm start 2>&1 > /var/log/nodejs/nodejs.log
