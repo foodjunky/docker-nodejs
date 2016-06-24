@@ -18,4 +18,6 @@ RUN apt-get --yes update && \
 
 WORKDIR /app
 
+EXPOSE 8080
+
 CMD npm start 2>&1 > /var/log/nodejs/nodejs.log
